@@ -66,7 +66,9 @@ class App:
     def copy_processes(self):
         return [Process(process.name, process.arrival_time, process.clock_cycle) for process in self.processes]
 
+
 # Preeemptive scheduling algorithm - FIFO
+# print every step with state of each process
 def preemptive_fifo(processes):
     print("===================================")
     print("Preemptive FIFO Scheduling Algorithm")
@@ -115,8 +117,10 @@ def preemptive_fifo(processes):
     for i in processes:
         total_turnaround_time += i.turnaround_time
     average_turnaround_time = total_turnaround_time / len(processes)
+    print("===================================")
     print("Average Turnaround Time: " + str(average_turnaround_time))
-
+    print("===================================")
+   
 def sjf_non_preemptive(processes):
     print("===================================")
     print("SJF Non-Preemptive Scheduling Algorithm")
@@ -160,13 +164,15 @@ def sjf_non_preemptive(processes):
         # check if all processes are terminated
         if all(i.state == ProcessState.TERMINATED for i in processes):
             break
-
     # compute average turnaround time
     total_turnaround_time = 0
     for i in processes:
         total_turnaround_time += i.turnaround_time
     average_turnaround_time = total_turnaround_time / len(processes)
+    print("===================================")
     print("Average Turnaround Time: " + str(average_turnaround_time))
+    print("===================================")
+    
 app = App()
 
 # Preemptive FIFO Simulation

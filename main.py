@@ -66,9 +66,6 @@ class App:
     def copy_processes(self):
         return [Process(process.name, process.arrival_time, process.clock_cycle) for process in self.processes]
 
-# Show the step by step procedures of running the processes.
-#  - Show how each process switches from/to waiting, ready and running states.
-#  - Compute the average turnaround time.
 
 # Preeemptive scheduling algorithm - FIFO
 # print every step with state of each process
